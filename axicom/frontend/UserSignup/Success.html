@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success - Technical Event Management</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #d3d3d3, #a8a8a8);
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px 30px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      color: #222;
+    }
+
+    .total {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 25px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .input-group {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    input, select {
+      width: 48%;
+      padding: 8px;
+      border: none;
+      border-radius: 6px;
+      background-color: #e0e0e0;
+      font-size: 15px;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      background-color: #fff;
+      border: 1px solid #3b82f6;
+    }
+
+    .continue-btn {
+      width: 100%;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+
+    .continue-btn:hover {
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>PopUp<br>THANK YOU</h2>
+
+    <div class="total">Total Amount: ₹1250</div>
+
+    <div class="input-group">
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Number">
+      <input type="email" placeholder="E-mail">
+      <select>
+        <option disabled selected>Payment Method</option>
+        <option>Credit Card</option>
+        <option>Debit Card</option>
+        <option>UPI</option>
+        <option>Net Banking</option>
+      </select>
+      <input type="text" placeholder="Address">
+      <input type="text" placeholder="State">
+      <input type="text" placeholder="City">
+      <input type="text" placeholder="Pin Code">
+    </div>
+
+    <button class="continue-btn" onclick="window.location.href='products.html'">Continue Shopping</button>
+  </div>
+</body>
+</html>

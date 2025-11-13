@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Item - Technical Event Management</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #d3d3d3, #a8a8a8);
+      width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 25px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #1f2937;
+      margin-bottom: 15px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .nav-buttons button {
+      background-color: #cce7cc;
+      border: 1px solid #7c7c7c;
+      color: #222;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #b1e3b1;
+    }
+
+    .request-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      font-size: 15px;
+      margin-bottom: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .request-btn:hover {
+      background-color: #2563eb;
+    }
+
+    .item-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item-card {
+      background-color: #3b82f6;
+      color: white;
+      width: 120px;
+      padding: 20px 10px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+
+    .item-card:hover {
+      transform: translateY(-5px);
+      background-color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Vendor - Request Item</h2>
+
+    <div class="nav-buttons">
+      <button onclick="window.location.href='vendor_page.html'">Home</button>
+      <button class="request-btn">Request Item</button>
+      <button onclick="window.location.href='login.html'">Logout</button>
+    </div>
+
+    <div class="item-container">
+      <div class="item-card">Item 1</div>
+      <div class="item-card">Item 2</div>
+      <div class="item-card">Item 3</div>
+      <div class="item-card">Item 4</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Order Status</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #b0b3b8;
+      padding: 30px;
+      border-radius: 12px;
+      width: 80%;
+      max-width: 900px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .nav button {
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav button:hover {
+      background-color: #495057;
+    }
+
+    .title {
+      background-color: #3b5998;
+      color: white;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      background-color: #9da3a6;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .grid-header {
+      background-color: #3b5998;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .grid-item {
+      background-color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #111827;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <button>Home</button>
+      <button>Logout</button>
+    </div>
+
+    <div class="title">User Order Status</div>
+
+    <div class="grid">
+      <div class="grid-header">Name</div>
+      <div class="grid-header">E-mail</div>
+      <div class="grid-header">Address</div>
+      <div class="grid-header">Status</div>
+
+      <!-- Example Row -->
+      <div class="grid-item">John Doe</div>
+      <div class="grid-item">john@example.com</div>
+      <div class="grid-item">New York, USA</div>
+      <div class="grid-item">Out for Delivery</div>
+
+      <div class="grid-item">Jane Smith</div>
+      <div class="grid-item">jane@mail.com</div>
+      <div class="grid-item">London, UK</div>
+      <div class="grid-item">Delivered</div>
+    </div>
+
+    <footer>© 2025 Event Management System | User Order Status Page</footer>
+  </div>
+
+  <script>
+    // Example JavaScript logic (optional)
+    const homeBtn = document.querySelector(".nav button:first-child");
+    const logoutBtn = document.querySelector(".nav button:last-child");
+
+    homeBtn.addEventListener("click", () => alert("Returning to Home Page..."));
+    logoutBtn.addEventListener("click", () => alert("You have been logged out."));
+  </script>
+</body>
+</html>

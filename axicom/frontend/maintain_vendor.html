@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"/><title>Maintain Vendor</title></head>
+<body>
+  <h2>Maintain Vendor (Sample)</h2>
+  <div>
+    <input id="vname" placeholder="Vendor Name"/><input id="vcontact" placeholder="Contact"/>
+    <button onclick="createVendor()">Add Vendor</button>
+  </div>
+  <ul id="vendors"></ul>
+  <script>
+    async function load() {
+      const res = await fetch('/api/vendors');
+      const items = await res.json();
+      const el = document.getElementById('vendors');
+      el.innerHTML = '';
+      items.forEach(u => {
+        const li = document.createElement('li');
+        li.textContent = `${u.id}. ${u.name} (${u.contact})`;
+        el.appendChild(li);
+      });
+    }
+    async function createVendor() {
+      const name = document.getElementById('vname').value;
+      const contact = document.getElementById('vcontact').value;
+      await fetch('/api/vendors', {method:'POST', headers:{'content-type':'application/json'}, body: JSON.stringify({name,contact})});
+      load();
+    }
+    load();
+  </script>
+</body>
+</html>

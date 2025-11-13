@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Event Management System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #c9d6ff, #e2e2e2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      padding: 30px 40px;
+      width: 360px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      background: linear-gradient(to bottom, #c3d9ff, #9bb4e7);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 25px;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #888;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .role-select {
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .role-select label {
+      margin-right: 10px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    button {
+      width: 45%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      background: linear-gradient(to bottom, #7f8c8d, #95a5a6);
+      color: white;
+    }
+
+    button:hover {
+      background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-top: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Event Management System</h2>
+
+    <div class="input-group">
+      <label for="userId">User ID</label>
+      <input type="text" id="userId" placeholder="Enter your User ID" />
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your Password" />
+    </div>
+
+    <div class="role-select">
+      <label><input type="radio" name="role" value="Admin" checked /> Admin</label>
+      <label><input type="radio" name="role" value="Vendor" /> Vendor</label>
+      <label><input type="radio" name="role" value="User" /> User</label>
+    </div>
+
+    <div class="button-group">
+      <button onclick="clearForm()">Cancel</button>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <p id="error-message" class="error"></p>
+  </div>
+
+  <script>
+    function clearForm() {
+      document.getElementById('userId').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('error-message').innerText = '';
+    }
+
+    function login() {
+      const userId = document.getElementById('userId').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const role = document.querySelector('input[name="role"]:checked').value;
+
+      const error = document.getElementById('error-message');
+
+      if (!userId || !password) {
+        error.innerText = '⚠️ Both User ID and Password are required.';
+        return;
+      }
+
+      // Simulated login validation
+      if (role === 'Admin' && userId === 'admin' && password === 'admin123') {
+        alert('✅ Login successful as Admin!');
+        // Redirect to maintenance or admin dashboard
+        window.location.href = 'adminDashboard.html';
+      } else {
+        error.innerText = '❌ Invalid credentials or role.';
+      }
+    }
+  </script>
+</body>
+</html>

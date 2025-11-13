@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Page - Technical Event Management</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #e0e0e0, #bdbdbd);
+      width: 850px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    /* Header section */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #d9e7d9;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .header button {
+      background-color: #ffffff;
+      color: #333;
+      border: 1px solid #a0a0a0;
+      border-radius: 6px;
+      padding: 8px 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .header button:hover {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+    }
+
+    /* Vendor cards grid */
+    .vendors {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      background-color: #bdbdbd;
+      padding: 30px 20px;
+      border-radius: 10px;
+    }
+
+    .card {
+      background-color: #3b82f6;
+      color: white;
+      width: 180px;
+      height: 150px;
+      border-radius: 15px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .card h3 {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 5px 0 10px 0;
+      font-size: 14px;
+    }
+
+    .card button {
+      background-color: white;
+      color: #3b82f6;
+      border: none;
+      padding: 6px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .card button:hover {
+      background-color: #2563eb;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <button onclick="window.location.href='Vendor.html'">Home</button>
+      <div>
+        <button onclick="window.location.href='vendor.html'">Vendor</button>
+        <button onclick="window.location.href='florist.html'">Florist</button>
+      </div>
+      <button onclick="window.location.href='VendorLogin.html'">Logout</button>
+    </div>
+
+    <!-- Vendor Cards -->
+    <div class="vendors">
+      <div class="card">
+        <h3>Vendor 1</h3>
+        <p>Contact Details</p>
+        <button>Shop Item</button>
+      </div>
+      <div class="card">
+        <h3>Vendor 2</h3>
+        <p>Contact Details</p>
+        <button>Shop Item</button>
+      </div>
+      <div class="card">
+        <h3>Vendor 3</h3>
+        <p>Contact Details</p>
+        <button>Shop Item</button>
+      </div>
+      <div class="card">
+        <h3>Vendor 4</h3>
+        <p>Contact Details</p>
+        <button>Shop Item</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

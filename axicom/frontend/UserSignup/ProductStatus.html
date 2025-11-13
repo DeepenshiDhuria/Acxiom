@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Status</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #e8eaed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .container {
+      background-color: #d3d3d3;
+      border-radius: 10px;
+      padding: 30px;
+      width: 80%;
+      max-width: 1000px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      text-align: center;
+      background-color: #3b5998;
+      color: white;
+      padding: 15px;
+      border-radius: 6px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .nav button {
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav button:hover {
+      background-color: #495057;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      background-color: #9da3a6;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .grid-header {
+      font-weight: 600;
+      background-color: #3b5998;
+      color: white;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .grid-item {
+      background-color: white;
+      border-radius: 6px;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .update-btn, .delete-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .delete-btn {
+      background-color: #ef4444;
+    }
+
+    .update-btn:hover {
+      background-color: #2563eb;
+    }
+
+    .delete-btn:hover {
+      background-color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">Product Status</div>
+
+    <div class="nav">
+      <button>Home</button>
+      <button>Logout</button>
+    </div>
+
+    <div class="grid">
+      <div class="grid-header">Name</div>
+      <div class="grid-header">E-Mail</div>
+      <div class="grid-header">Address</div>
+      <div class="grid-header">Status</div>
+      <div class="grid-header">Update</div>
+      <div class="grid-header">Delete</div>
+
+      <!-- Example Data Row -->
+      <div class="grid-item">John Doe</div>
+      <div class="grid-item">john@gmail.com</div>
+      <div class="grid-item">New York</div>
+      <div class="grid-item">Pending</div>
+      <div class="grid-item"><button class="update-btn" onclick="window.location.href='Update.html'">Update</button></div>
+      <div class="grid-item"><button class="delete-btn" >Delete</button></div>
+
+      <div class="grid-item">Jane Smith</div>
+      <div class="grid-item">jane@mail.com</div>
+      <div class="grid-item">London</div>
+      <div class="grid-item">Completed</div>
+      <div class="grid-item"><button class="update-btn" onclick="window.location.href='Update.html'">Update</button></div>
+      <div class="grid-item"><button class="delete-btn">Delete</button></div>
+    </div>
+  </div>
+
+  <script>
+    // Example JS for actions
+    document.querySelectorAll(".update-btn").forEach(btn => {
+      btn.addEventListener("click", () => alert("Update function triggered"));
+    });
+
+    document.querySelectorAll(".delete-btn").forEach(btn => {
+      btn.addEventListener("click", () => alert("Delete function triggered"));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendor Dashboard | Event Management System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #3d63b0;
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .vendor-container {
+      background-color: #2c4a87;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      width: 480px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      background-color: #cfd7e8;
+      color: #000;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      flex: 1 1 45%;
+      background-color: #aeb7c8;
+      border: none;
+      padding: 12px 10px;
+      border-radius: 8px;
+      color: #000;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #8894a8;
+    }
+  </style>
+</head>
+<body>
+  <div class="vendor-container">
+    <h2>Welcome Vendor</h2>
+
+    <div class="button-group">
+      <button onclick="viewItems()">Your Item</button>
+      <button onclick="addNewItem()">Add New Item</button>
+      <button onclick="viewTransactions()">Transaction</button>
+      <button onclick="logout()">LogOut</button>
+    </div>
+  </div>
+
+  <script>
+    function viewItems() {
+      alert("Redirecting to Your Item page...");
+      window.location.href = "VendorItems.html"; // Example redirect
+    }
+
+    function addNewItem() {
+      alert("Redirecting to Add New Item page...");
+      window.location.href = "AddItem.html";
+    }
+
+    function viewTransactions() {
+      alert("Redirecting to Transactions page...");
+      window.location.href = "Transaction.html";
+    }
+
+    function logout() {
+      const confirmLogout = confirm("Are you sure you want to logout?");
+      if (confirmLogout) {
+        alert("Logged out successfully!");
+        window.location.href = "VendorLogin.html";
+      }
+    }
+  </script>
+</body>
+</html>

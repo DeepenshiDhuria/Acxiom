@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Login | Event Management System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #d7dbe6, #f2f2f2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      background-color: #f0f0f0;
+      border: 1px solid #aaa;
+      border-radius: 8px;
+      width: 400px;
+      padding: 25px 35px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .top-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    .top-buttons button {
+      padding: 6px 14px;
+      border: none;
+      border-radius: 4px;
+      background: linear-gradient(to bottom, #9bb4e7, #6f8dd9);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .top-buttons button:hover {
+      background: linear-gradient(to bottom, #6f8dd9, #5f7ec4);
+    }
+
+    h2 {
+      text-align: center;
+      background: linear-gradient(to bottom, #c3d9ff, #9bb4e7);
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #888;
+      outline: none;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      border-color: #5b79c4;
+    }
+
+    .role-display {
+      background-color: #c3d9ff;
+      border-radius: 4px;
+      padding: 8px;
+      text-align: center;
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 15px;
+    }
+
+    .button-group button {
+      width: 45%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background: linear-gradient(to bottom, #7f8c8d, #95a5a6);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .button-group button:hover {
+      background: linear-gradient(to bottom, #95a5a6, #7f8c8d);
+    }
+
+    .error-message {
+      text-align: center;
+      color: red;
+      margin-top: 10px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <div class="top-buttons">
+      <button onclick="goToChart()">CHART</button>
+      <button onclick="goBack()">BACK</button>
+    </div>
+
+    <h2>Event Management System</h2>
+
+    <div class="input-group">
+      <label for="userId">User ID</label>
+      <input type="text" id="userId" placeholder="Enter Vendor ID" />
+    </div>
+
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter Password" />
+    </div>
+
+    <div class="role-display">
+      Role: Vendor
+    </div>
+
+    <div class="button-group">
+      <button onclick="clearForm()">Cancel</button>
+      <button onclick="login()">Login</button>
+    </div>
+
+    <p id="error" class="error-message"></p>
+  </div>
+
+  <script>
+    function goToChart() {
+      // Navigate to flowchart (not required in final working app)
+      alert("Navigating to chart view...");
+      // Example: window.location.href = 'flowchart.html';
+    }
+
+    function goBack() {
+      window.history.back();
+    }
+
+    function clearForm() {
+      document.getElementById('userId').value = '';
+      document.getElementById('password').value = '';
+      document.getElementById('error').innerText = '';
+    }
+
+    function login() {
+      const userId = document.getElementById('userId').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const error = document.getElementById('error');
+
+      if (!userId || !password) {
+        error.innerText = "⚠️ User ID and Password are required.";
+        return;
+      }
+
+      // Dummy credentials for testing
+      if (userId === 'vendor1' && password === 'vendor123') {
+        alert("✅ Vendor Login Successful!");
+        window.location.href = "vendorDashboard.html"; // redirect
+      } else {
+        error.innerText = "❌ Invalid Vendor credentials.";
+      }
+    }
+  </script>
+</body>
+</html>

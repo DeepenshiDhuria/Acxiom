@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #b0b3b8;
+      width: 70%;
+      max-width: 900px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+
+    .nav button {
+      background-color: #d1e7dd;
+      color: #111;
+      border: 1px solid #9acd32;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .nav button:hover {
+      background-color: #a8d5a1;
+    }
+
+    .welcome {
+      background-color: #f8f9fa;
+      border: 1px solid #9acd32;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 1.3rem;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .buttons button {
+      background-color: #d1e7dd;
+      border: 1px solid #9acd32;
+      color: #111;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+    }
+
+    .buttons button:hover {
+      background-color: #a8d5a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <button id="homeBtn"onclick="window.location.href='Admin.html'">Home</button>
+      <button id="logoutBtn" onclick="window.location.href='AdminLogin.html'">Logout</button>
+    </div>
+
+    <div class="welcome">Welcome Admin</div>
+
+    <div class="buttons">
+      <button id="userBtn" onclick="window.location.href='MaintainUser.html'">Maintain User</button>
+      <button id="vendorBtn" onclick="window.location.href='MaintainVendor.html'">Maintain Vendor</button>
+    </div>
+  </div>
+
+  <script>
+    // Example JavaScript functionality
+    document.getElementById("homeBtn").addEventListener("click", () => {
+      alert("Redirecting to Home Page...");
+      // window.location.href = "home.html";
+    });
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      alert("You have been logged out.");
+      // window.location.href = "login.html";
+    });
+
+    document.getElementById("userBtn").addEventListener("click", () => {
+      alert("Navigating to Maintain User Page...");
+      // window.location.href = "maintain-user.html";
+    });
+
+    document.getElementById("vendorBtn").addEventListener("click", () => {
+      alert("Navigating to Maintain Vendor Page...");
+      // window.location.href = "maintain-vendor.html";
+    });
+  </script>
+</body>
+</html>

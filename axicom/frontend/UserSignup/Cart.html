@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart - Technical Event Management</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #e0e0e0, #bdbdbd);
+      width: 850px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #d9e7d9;
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .header button {
+      background-color: #ffffff;
+      color: #333;
+      border: 1px solid #a0a0a0;
+      border-radius: 6px;
+      padding: 8px 18px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .header button:hover {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+    }
+
+    /* Cart table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 25px;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #3b82f6;
+      color: white;
+      font-weight: normal;
+    }
+
+    td button {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    td button:hover {
+      background-color: #dc2626;
+    }
+
+    /* Summary Section */
+    .summary {
+      text-align: right;
+      background-color: #bdbdbd;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .summary h3 {
+      margin: 10px 0;
+    }
+
+    .checkout-btn {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .checkout-btn:hover {
+      background-color: #2563eb;
+    }
+
+    .empty {
+      text-align: center;
+      color: #555;
+      font-size: 18px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <button onclick="window.location.href='home.html'">Home</button>
+      <button>Cart</button>
+      <button onclick="window.location.href='login.html'">Logout</button>
+    </div>
+
+    <!-- Cart Table -->
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price (₹)</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cartBody">
+        <tr>
+          <td>Product 1</td>
+          <td>500</td>
+          <td><input type="number" min="1" value="1" onchange="updateTotal(this)" style="width:60px;text-align:center;"></td>
+          <td class="itemTotal">500</td>
+          <td><button onclick="removeItem(this)">Remove</button></td>
+        </tr>
+        <tr>
+          <td>Product 2</td>
+          <td>750</td>
+          <td><input type="number" min="1" value="1" onchange="updateTotal(this)" style="width:60px;text-align:center;"></td>
+          <td class="itemTotal">750</td>
+          <td><button onclick="removeItem(this)">Remove</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Summary -->
+    <div class="summary">
+      <h3 id="totalAmount">Total: ₹1250</h3>
+      <button class="checkout-btn" onclick="window.location.href='checkout.html'">Checkout</button>
+    </div>
+  </div>
+
+  <script>
+    function updateTotal(input) {
+      const row = input.parentElement.parentElement;
+      const price = parseFloat(row.cells[1].innerText);
+      const quantity = parseInt(input.value);
+      const itemTotal = row.querySelector(".itemTotal");
+      itemTotal.innerText = price * quantity;
+      updateGrandTotal();
+    }
+
+    function removeItem(button) {
+      const row = button.parentElement.parentElement;
+      row.remove();
+      updateGrandTotal();
+    }
+
+    function updateGrandTotal() {
+      const totals = document.querySelectorAll(".itemTotal");
+      let sum = 0;
+      totals.forEach(t => sum += parseFloat(t.innerText));
+      document.getElementById("totalAmount").innerText = "Total: ₹" + sum;
+      if (totals.length === 0) {
+        document.getElementById("cartTable").style.display = "none";
+        document.querySelector(".summary").innerHTML = '<p class="empty">Your cart is empty.</p>';
+      }
+    }
+  </script>
+</body>
+</html>

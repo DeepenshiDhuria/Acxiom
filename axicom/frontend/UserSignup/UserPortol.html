@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Portal - Technical Event Management</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: linear-gradient(to bottom, #e0e0e0, #bdbdbd);
+      width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header {
+      background-color: #3b5998;
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+    }
+
+    button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2563eb;
+      transform: translateY(-2px);
+    }
+
+    /* Dropdown */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      z-index: 1;
+      left: 0;
+      text-align: left;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 15px;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #e5e7eb;
+    }
+
+    .logout {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">WELCOME USER</div>
+
+    <div class="buttons">
+      <!-- Vendor Dropdown -->
+      <div class="dropdown">
+        <button onclick="toggleDropdown()">Vendor ▾</button>
+        <div id="vendorDropdown" class="dropdown-content">
+          <a href="#">Catering</a>
+          <a href="#">Florist</a>
+          <a href="#">Decoration</a>
+          <a href="#">Lighting</a>
+        </div>
+      </div>
+
+      <button onclick="window.location.href='Cart.html'">Cart</button>
+      <button onclick="window.location.href='GuestList.html'">Guest List</button>
+      <button onclick="window.location.href='OrderStatusUser.html'">Order Status</button>
+    </div>
+
+    <div class="logout">
+      <button onclick="window.location.href='UserLogin.html'">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    // Toggle vendor dropdown visibility
+    function toggleDropdown() {
+      document.getElementById("vendorDropdown").classList.toggle("show");
+    }
+
+    // Close dropdown if clicked outside
+    window.onclick = function(event) {
+      if (!event.target.matches("button")) {
+        const dropdown = document.getElementById("vendorDropdown");
+        if (dropdown.classList.contains("show")) {
+          dropdown.classList.remove("show");
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Dynamic dropdown show styling */
+    .show {
+      display: block;
+    }
+  </style>
+</body>
+</html>
